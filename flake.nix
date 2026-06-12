@@ -33,6 +33,8 @@
           default = pkgs.mkShell {
             packages = [
               pkgs.dotnetCorePackages.sdk_10_0-bin
+              pkgs.meson
+              pkgs.ninja
             ];
 
             DOTNET_ROOT = "${pkgs.dotnetCorePackages.sdk_10_0-bin}/share/dotnet";
