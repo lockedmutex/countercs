@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -6,19 +6,21 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>suyogtandel.countercs</RootNamespace>
+        <GirCoreVersion>0.8.0-preview.1</GirCoreVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="GirCore.Adw-1" Version="0.7.0" />
-        <PackageReference Include="GirCore.Gtk-4.0" Version="0.7.0" />
+        <PackageReference Include="GirCore.Adw-1" Version="$(GirCoreVersion)" />
+        <PackageReference Include="GirCore.Gtk-4.0" Version="$(GirCoreVersion)" />
+        <PackageReference Include="GirCore.GObject-2.0.Integration" Version="$(GirCoreVersion)" />
+        <PackageReference Include="GirCore.Gtk-4.0.Integration" Version="$(GirCoreVersion)" />
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Include="ui\CounterCsWindow.ui">
-        <LogicalName>CounterCsWindow.ui</LogicalName>
-      </EmbeddedResource>
-      <EmbeddedResource Include="ui\shortcuts-dialog.ui">
-        <LogicalName>shortcuts-dialog.ui</LogicalName>
+      <None Remove="**\*.ui" />
+      <EmbeddedResource Include="**\*.ui">
+        <LogicalName>%(Filename)%(Extension)</LogicalName>
       </EmbeddedResource>
     </ItemGroup>
 

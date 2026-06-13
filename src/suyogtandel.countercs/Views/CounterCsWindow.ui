@@ -4,7 +4,7 @@
   <!-- interface-name test.ui -->
   <requires lib="gtk" version="4.14"/>
   <requires lib="libadwaita" version="1.7"/>
-  <object class="AdwApplicationWindow" id="CounterCsWindow">
+  <template class="CounterCsWindow" parent="AdwApplicationWindow">
     <property name="default-height">200</property>
     <property name="default-width">400</property>
     <property name="title">CounterCS</property>
@@ -68,7 +68,7 @@
         </child>
       </object>
     </child>
-  </object>
+  </template>
   <menu id="primary_menu">
     <section>
       <item>
